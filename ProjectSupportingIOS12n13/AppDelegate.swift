@@ -21,6 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
         
         return true
     }
+    
+    @available(iOS 13.0, *)
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        window?.rootViewController = ViewController()
+        
+  
+    }
+
 
     
 
