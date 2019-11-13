@@ -24,10 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIWindowSceneDelegate {
     
     @available(iOS 13.0, *)
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-        window = UIWindow()
-        window?.makeKeyAndVisible()
-        window?.rootViewController = ViewController()
+        // Use a UIHostingController as window root view controller.
+        if let windowScene = scene as? UIWindowScene {
+            self.window = UIWindow(windowScene: windowScene)
+            window?.makeKeyAndVisible()
+            window?.rootViewController = ViewController()
+        }
         
   
     }
